@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/suggested-blog-posts",
+  "version": "0.1.0",
+  "title": "Suggested Blog Posts",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Suggested Blog Post block where user can choose a title, subtitle, and multiple blog posts.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "suggested-blog-posts",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Enjoy this Blog Post and Want to Read More?"
+    },
+    "text": {
+      "type": "string",
+      "default": "Check out these related blog posts:"
+    },
+    "links": {
+      "type": "array"
+    }
+  }
+}
