@@ -1,24 +1,23 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {WPElement} Element to render.
- */
-export default function save() {
+export default function save( { attributes } ) {
+	const { heading, text, links, theAlignment, bgColor, bPadding, bBorder, hColor, shColor, lkColor } = attributes;
+	
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Boilerplate – hello from the saved content!' }
-		</p>
+		<div { ...useBlockProps.save() }>
+			<div className="" style={{backgroundColor: bgColor, padding: bPadding, textAlign: theAlignment, border: bBorder.width + " " + bBorder.style + " " + bBorder.color}}>
+				<h2 style={{fontSize: "20px", color: hColor, textAlign: theAlignment}}>{heading}</h2>
+				<p style={{fontSize: "20px", color: shColor, textAlign: theAlignment}}>{text}</p>
+				<ul>
+				{links.length !== undefined && links.map(function (link, index) {
+					return (
+					<li key={index}>
+						<a href={link.url} style={{color: lkColor}}>{link.title}</a>
+					</li>
+					)
+				})}
+				</ul>
+			</div>
+		</div>
 	);
 }

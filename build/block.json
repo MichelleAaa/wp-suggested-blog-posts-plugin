@@ -7,8 +7,32 @@
   "category": "widgets",
   "icon": "smiley",
   "description": "Suggested Blog Post block where user can choose a title, subtitle, and multiple blog posts.",
-  "supports": {
-    "html": false
+  "example": {
+    "attributes": {
+      "heading": "Enjoy this Blog Post and Want to Read More?",
+      "text": "Check out these related blog posts:",
+      "links": [
+        {
+          "url": "https://www.google.com",
+          "title": "Google"
+        },
+        {
+          "url": "https://www.google.com",
+          "title": "Google"
+        }
+      ],
+      "bgColor": "#EBEBEB",
+      "theAlignment": "left",
+      "bPadding": "15px",
+      "bBorder": {
+        "width": "0px",
+        "style": "solid",
+        "color": "#000000"
+      },
+      "hColor": "#000000",
+      "shColor": "#000000",
+      "lkColor": "#000000"
+    }
   },
   "textdomain": "suggested-blog-posts",
   "editorScript": "file:./index.js",
@@ -24,7 +48,40 @@
       "default": "Check out these related blog posts:"
     },
     "links": {
-      "type": "array"
+      "type": "array",
+      "default": []
+    },
+    "theAlignment": {
+      "type": "string",
+      "default": "left"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#EBEBEB"
+    },
+    "bPadding": {
+      "type": "string",
+      "default": "15px"
+    },
+    "bBorder": {
+      "type": "object",
+      "default": {
+        "width": "0px",
+        "style": "solid",
+        "color": "#000000"
+      }
+    },
+    "hColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "shColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "lkColor": {
+      "type": "string",
+      "default": "#000000"
     }
   }
 }
