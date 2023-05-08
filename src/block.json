@@ -5,24 +5,24 @@
 	"version": "0.1.0",
 	"title": "Suggested Blog Posts",
 	"category": "widgets",
-	"icon": "smiley",
+	"icon": "welcome-write-blog",
 	"description": "Suggested Blog Post block where user can choose a title, subtitle, and multiple blog posts.",
 	"example": {
 		"attributes": {
 			"heading": "Enjoy this Blog Post and Want to Read More?",
 			"text": "Check out these related blog posts:",
-			"links": [ {"url": "https://www.google.com", "title": "Google"}, {"url": "https://www.google.com", "title": "Google"} ],
-			"bgColor": "#EBEBEB",
+			"links": [ {"url": "https://www.google.com", "title": "Google"}, {"url": "https://www.instagram.com", "title": "Instagram"} ],
+			"bgColor": "#f0f0f5",
 			"theAlignment": "left",
-			"bPadding":	"15px",
+			"bPadding":	"7%",
 			"bBorder": {
-				"width": "0px",
+				"width": "1px",
 				"style": "solid",
-				"color": "#000000"
+				"color": "#c0c0c0"
 			},
-			"hColor": "#000000",
-			"shColor": "#000000",
-			"lkColor": "#000000"
+			"hColor": "#343031",
+			"shColor": "#3b2f2f",
+			"lkColor": "#8c1e1e"
 		}
 	},
 	"textdomain": "suggested-blog-posts",
@@ -36,7 +36,7 @@
 		},
 		"text": {
 			"type": "string",
-			"default": "Check out these related blog posts:"
+			"default": "Check Out These Related Blog Posts:"
 		},
 		"links": {
 			"type": "array",
@@ -48,31 +48,31 @@
 		},
 		"bgColor": {
 			"type": "string", 
-			"default": "#EBEBEB"
+			"default": "#FAFAFA00"
 		},
 		"bPadding": {
 			"type": "string", 
-			"default": "15px"
+			"default": "7%"
 		},
 		"bBorder": {
 			"type": "object", 
 			"default": {
 				"width": "0px",
 				"style": "solid",
-				"color": "#000000"
+				"color": "#c0c0c0"
 			}
 		},
 		"hColor": {
 			"type": "string", 
-			"default": "#000000"
+			"default": "#343031"
 		},
 		"shColor": {
 			"type": "string", 
-			"default": "#000000"
+			"default": "#3b2f2f"
 		},
 		"lkColor": {
 			"type": "string", 
-			"default": "#000000"
+			"default": "#8c1e1e"
 		}
 	}
 }

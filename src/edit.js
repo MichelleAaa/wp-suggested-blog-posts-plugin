@@ -1,8 +1,3 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
 
 import { useState } from "@wordpress/element";
@@ -21,19 +16,19 @@ export default function Edit({ attributes, setAttributes }) {
 	function updatePadding(value) {
 		switch(value){
 			case "small":
-				value = "10px";
+				value = "3%";
 				break;
 			case "medium": 
-				value = "20px";
+				value = "5%";
 				break;
 			case "large": 
-				value = "30px";
+				value = "7%";
 				break;
 			case "xlarge": 
-				value = "40px";
+				value = "10%";
 				break;
 			default:
-				value = "3px";
+				value = "1%";
 		}
 		setAttributes({ bPadding: value });
 	}
@@ -79,49 +74,49 @@ export default function Edit({ attributes, setAttributes }) {
 					<AlignmentToolbar value={theAlignment} onChange={x => setAttributes({ theAlignment: x })} />
 				</BlockControls>
 				<InspectorControls>
-					<PanelBody title="Block Background Color" initialOpen={false}>
+					<PanelBody title={ __( "Block Background Color", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<ColorPicker color={bgColor} onChangeComplete={x => setAttributes({bgColor: x.hex})} />
 						</PanelRow>
 					</PanelBody>
-					<PanelBody title="Block Padding" initialOpen={false}>
+					<PanelBody title={ __( "Block Padding", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<DimensionControl
-								label={ 'Padding' }
+								label={ __('Padding', 'suggested-blog-posts') }
 								icon={ 'desktop' }
 								onChange={ value  => updatePadding(value)  }
 								value={ bPadding }
 							/>
 						</PanelRow>
 					</PanelBody>
-					<PanelBody title="Block Border Box" initialOpen={false}>
+					<PanelBody title={ __( "Block Border Box", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<BorderControl
-								label={ __( 'Borders' ) }
+								label={ __( 'Borders', 'suggested-blog-posts' ) }
 								onChange={ value => updateBorder(value) }
 								value={ bBorder }
 								shouldSanitizeBorder= {false}
 							/>
 						</PanelRow>
 					</PanelBody>
-					<PanelBody title="Heading Color" initialOpen={false}>
+					<PanelBody title={ __( "Heading Color", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<ColorPicker color={hColor} onChangeComplete={x => setAttributes({hColor: x.hex})} />
 						</PanelRow>
 					</PanelBody>
-					<PanelBody title="SubHeading Color" initialOpen={false}>
+					<PanelBody title={ __( "SubHeading Color", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<ColorPicker color={shColor} onChangeComplete={x => setAttributes({shColor: x.hex})} />
 						</PanelRow>
 					</PanelBody>
-					<PanelBody title="Link Color" initialOpen={false}>
+					<PanelBody title={ __( "Link Color", 'suggested-blog-posts' ) } initialOpen={false}>
 						<PanelRow>
 							<ColorPicker color={lkColor} onChangeComplete={x => setAttributes({lkColor: x.hex})} />
 						</PanelRow>
 					</PanelBody>
 				</InspectorControls>
-				<TextControl label="Heading" value={heading} onChange={value => setAttributes({heading: value})} style={{fontSize: "20px", color: hColor, textAlign: theAlignment}} />
-				<TextControl label="Subheading" value={text} onChange={ value => setAttributes({text: value}) } style={{fontSize: "20px", color: shColor,textAlign: theAlignment}} />
+				<TextControl label={__("Heading")} value={heading} onChange={value => setAttributes({heading: value})} style={{ color: hColor, textAlign: theAlignment }} />
+				<TextControl label={__("Subheading")} value={text} onChange={ value => setAttributes({text: value}) } style={{ color: shColor,textAlign: theAlignment }} />
 				{links.length > 0 && links.map(function (link, index) {
 					return (
 					<Flex key={index}>
@@ -137,14 +132,14 @@ export default function Edit({ attributes, setAttributes }) {
 					)
 				})}
 				<Button isPrimary onClick={() => setIsLinkPickerVisible(prev => !prev)
-				}>Add Link</Button>
+				}>{__('Add Link', 'suggested-blog-posts')}</Button>
 			</div>
 			{isLinkPickerVisible && (
 				<Popover position="middle center" onFocusOutside={() => setIsLinkPickerVisible(false)}>
-					{/* This creates a field where someone can enter a URL or they can search the wordpress site for a page: */}
+					{/* This creates a field where someone can enter a URL or they can search the WordPress site for a page: */}
 					<LinkControl settings={[]} value={linkValue} onChange={(newLink) => setLinkValue( newLink )} />
 					<Button variant="primary" onClick={addLink} style={{ display: "block", width: "100%" }}>
-						Confirm Link
+						{__('Confirm Link', 'suggested-blog-posts')}
 					</Button>
 				</Popover>
 			)}

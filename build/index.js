@@ -24,11 +24,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 
 
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
 
 
 // eslint-disable-next-line
@@ -58,19 +53,24 @@ function Edit(_ref) {
   function updatePadding(value) {
     switch (value) {
       case "small":
-        value = "10px";
+        // value = "15px";
+        value = "3%";
         break;
       case "medium":
-        value = "20px";
+        // value = "25px";
+        value = "5%";
         break;
       case "large":
-        value = "30px";
+        // value = "35px";
+        value = "7%";
         break;
       case "xlarge":
-        value = "40px";
+        // value = "45px";
+        value = "10%";
         break;
       default:
-        value = "3px";
+        // value = "3px";
+        value = "1%";
     }
     setAttributes({
       bPadding: value
@@ -130,7 +130,7 @@ function Edit(_ref) {
       theAlignment: x
     })
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Block Background Color",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Block Background Color", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
     color: bgColor,
@@ -138,23 +138,23 @@ function Edit(_ref) {
       bgColor: x.hex
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Block Padding",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Block Padding", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalDimensionControl, {
-    label: 'Padding',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Padding', 'suggested-blog-posts'),
     icon: 'desktop',
     onChange: value => updatePadding(value),
     value: bPadding
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Block Border Box",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Block Border Box", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.__experimentalBorderControl, {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Borders'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Borders', 'suggested-blog-posts'),
     onChange: value => updateBorder(value),
     value: bBorder,
     shouldSanitizeBorder: false
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Heading Color",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Heading Color", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
     color: hColor,
@@ -162,7 +162,7 @@ function Edit(_ref) {
       hColor: x.hex
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "SubHeading Color",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("SubHeading Color", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
     color: shColor,
@@ -170,7 +170,7 @@ function Edit(_ref) {
       shColor: x.hex
     })
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: "Link Color",
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Link Color", 'suggested-blog-posts'),
     initialOpen: false
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
     color: lkColor,
@@ -178,24 +178,22 @@ function Edit(_ref) {
       lkColor: x.hex
     })
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Heading",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Heading"),
     value: heading,
     onChange: value => setAttributes({
       heading: value
     }),
     style: {
-      fontSize: "20px",
       color: hColor,
       textAlign: theAlignment
     }
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Subheading",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)("Subheading"),
     value: text,
     onChange: value => setAttributes({
       text: value
     }),
     style: {
-      fontSize: "20px",
       color: shColor,
       textAlign: theAlignment
     }
@@ -218,7 +216,7 @@ function Edit(_ref) {
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
     isPrimary: true,
     onClick: () => setIsLinkPickerVisible(prev => !prev)
-  }, "Add Link")), isLinkPickerVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Add Link', 'suggested-blog-posts'))), isLinkPickerVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Popover, {
     position: "middle center",
     onFocusOutside: () => setIsLinkPickerVisible(false)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_4__.__experimentalLinkControl, {
@@ -232,7 +230,7 @@ function Edit(_ref) {
       display: "block",
       width: "100%"
     }
-  }, "Confirm Link")));
+  }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Confirm Link', 'suggested-blog-posts'))));
 }
 
 /***/ }),
@@ -250,42 +248,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-
-
-/**
- * Internal dependencies
- */
 
 
 
 
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_4__.name, {
-  /**
-   * @see ./edit.js
-   */
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-  /**
-   * @see ./save.js
-   */
   save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
@@ -333,13 +302,11 @@ function save(_ref) {
     }
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     style: {
-      fontSize: "20px",
       color: hColor,
       textAlign: theAlignment
     }
   }, heading), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", {
     style: {
-      fontSize: "20px",
       color: shColor,
       textAlign: theAlignment
     }
@@ -464,7 +431,7 @@ function _extends() {
   \************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/suggested-blog-posts","version":"0.1.0","title":"Suggested Blog Posts","category":"widgets","icon":"smiley","description":"Suggested Blog Post block where user can choose a title, subtitle, and multiple blog posts.","example":{"attributes":{"heading":"Enjoy this Blog Post and Want to Read More?","text":"Check out these related blog posts:","links":[{"url":"https://www.google.com","title":"Google"},{"url":"https://www.google.com","title":"Google"}],"bgColor":"#EBEBEB","theAlignment":"left","bPadding":"15px","bBorder":{"width":"0px","style":"solid","color":"#000000"},"hColor":"#000000","shColor":"#000000","lkColor":"#000000"}},"textdomain":"suggested-blog-posts","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","default":"Enjoy this Blog Post and Want to Read More?"},"text":{"type":"string","default":"Check out these related blog posts:"},"links":{"type":"array","default":[]},"theAlignment":{"type":"string","default":"left"},"bgColor":{"type":"string","default":"#EBEBEB"},"bPadding":{"type":"string","default":"15px"},"bBorder":{"type":"object","default":{"width":"0px","style":"solid","color":"#000000"}},"hColor":{"type":"string","default":"#000000"},"shColor":{"type":"string","default":"#000000"},"lkColor":{"type":"string","default":"#000000"}}}');
+module.exports = JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":2,"name":"create-block/suggested-blog-posts","version":"0.1.0","title":"Suggested Blog Posts","category":"widgets","icon":"welcome-write-blog","description":"Suggested Blog Post block where user can choose a title, subtitle, and multiple blog posts.","example":{"attributes":{"heading":"Enjoy this Blog Post and Want to Read More?","text":"Check out these related blog posts:","links":[{"url":"https://www.google.com","title":"Google"},{"url":"https://www.instagram.com","title":"Instagram"}],"bgColor":"#f0f0f5","theAlignment":"left","bPadding":"7%","bBorder":{"width":"1px","style":"solid","color":"#c0c0c0"},"hColor":"#343031","shColor":"#3b2f2f","lkColor":"#8c1e1e"}},"textdomain":"suggested-blog-posts","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","attributes":{"heading":{"type":"string","default":"Enjoy this Blog Post and Want to Read More?"},"text":{"type":"string","default":"Check Out These Related Blog Posts:"},"links":{"type":"array","default":[]},"theAlignment":{"type":"string","default":"left"},"bgColor":{"type":"string","default":"#FAFAFA00"},"bPadding":{"type":"string","default":"7%"},"bBorder":{"type":"object","default":{"width":"0px","style":"solid","color":"#c0c0c0"}},"hColor":{"type":"string","default":"#343031"},"shColor":{"type":"string","default":"#3b2f2f"},"lkColor":{"type":"string","default":"#8c1e1e"}}}');
 
 /***/ })
 

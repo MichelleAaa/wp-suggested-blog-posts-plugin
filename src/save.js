@@ -6,8 +6,8 @@ export default function save( { attributes } ) {
 	return (
 		<div { ...useBlockProps.save() }>
 			<div className="" style={{backgroundColor: bgColor, padding: bPadding, textAlign: theAlignment, border: bBorder.width + " " + bBorder.style + " " + bBorder.color}}>
-				<h2 style={{fontSize: "20px", color: hColor, textAlign: theAlignment}}>{heading}</h2>
-				<p style={{fontSize: "20px", color: shColor, textAlign: theAlignment}}>{text}</p>
+				<h2 style={{ color: hColor, textAlign: theAlignment }}>{heading}</h2>
+				<p style={{ color: shColor, textAlign: theAlignment }}>{text}</p>
 				<ul>
 				{links.length !== undefined && links.map(function (link, index) {
 					return (
